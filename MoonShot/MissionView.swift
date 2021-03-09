@@ -26,8 +26,10 @@ struct MissionView: View {
                         .frame(maxWidth: geometry.size.width * 0.7)
                         .padding(.top)
                     
-                    Text(self.mission.formattedLaunchDate)
-
+                    Text("Launch Date: \(self.mission.formattedLaunchDate)")
+                        .font(.system(size: 16.0))
+                        .padding(.top)
+                        
                     Text(self.mission.description)
                         .padding()
                     

@@ -16,6 +16,7 @@ struct Mission: Codable, Identifiable {
     let id: Int
     let launchDate: Date?
     let crew: [CrewRole]
+   
     let description: String
     
     var displayName: String {
@@ -35,4 +36,14 @@ struct Mission: Codable, Identifiable {
             return "N/A"
         }
     }
+    
+    var crewMembers: String {
+        var crewList = [String]()
+        
+        for member in crew {
+            crewList.append(member.name.capitalized)
+        }
+            
+        return crewList.joined(separator: ", ")
+        }
 }
